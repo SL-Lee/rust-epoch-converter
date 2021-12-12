@@ -81,10 +81,7 @@ impl DateTime {
             epoch += length_of_month(i, self.year);
         }
 
-        epoch += (self.day - 1) * 86400
-            + self.hour * 3600
-            + self.minute * 60
-            + self.second;
+        epoch += (self.day - 1) * 86400 + self.hour * 3600 + self.minute * 60 + self.second;
 
         epoch
     }
@@ -95,12 +92,7 @@ impl std::fmt::Display for DateTime {
         write!(
             f,
             "{}-{:0>2}-{:0>2}T{:0>2}:{:0>2}:{:0>2}Z",
-            self.year,
-            self.month,
-            self.day,
-            self.hour,
-            self.minute,
-            self.second,
+            self.year, self.month, self.day, self.hour, self.minute, self.second,
         )
     }
 }

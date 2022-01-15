@@ -84,8 +84,13 @@ impl std::fmt::Display for DateTime {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         write!(
             f,
-            "{}-{:0>2}-{:0>2}T{:0>2}:{:0>2}:{:0>2}Z",
-            self.year, self.month, self.day, self.hour, self.minute, self.second,
+            "{year}-{month:0>2}-{day:0>2}T{hour:0>2}:{minute:0>2}:{second:0>2}Z",
+            year = self.year,
+            month = self.month,
+            day = self.day,
+            hour = self.hour,
+            minute = self.minute,
+            second = self.second,
         )
     }
 }

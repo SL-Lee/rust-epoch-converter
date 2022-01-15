@@ -28,14 +28,7 @@ impl DateTime {
             && minute <= 59
             && second <= 59
         {
-            Ok(DateTime {
-                year,
-                month,
-                day,
-                hour,
-                minute,
-                second,
-            })
+            Ok(DateTime { year, month, day, hour, minute, second })
         } else {
             Err(Error::new(ErrorKind::InvalidDate))
         }
@@ -127,17 +120,11 @@ mod tests {
 
     #[test]
     fn epoch_to_date_test() {
-        assert_eq!(
-            DateTime::new(2001, 9, 9, 1, 46, 40).unwrap(),
-            DateTime::from_epoch(1000000000),
-        );
+        assert_eq!(DateTime::new(2001, 9, 9, 1, 46, 40).unwrap(), DateTime::from_epoch(1000000000));
     }
 
     #[test]
     fn date_to_epoch_test() {
-        assert_eq!(
-            1000000000,
-            DateTime::new(2001, 9, 9, 1, 46, 40).unwrap().to_epoch(),
-        );
+        assert_eq!(1000000000, DateTime::new(2001, 9, 9, 1, 46, 40).unwrap().to_epoch(),);
     }
 }
